@@ -10,7 +10,7 @@ import com.christian.hibernate.demo.entity.InstructorDetail;
 import com.christian.hibernate.demo.entity.Review;
 import com.christian.hibernate.demo.entity.Student;
 
-public class GetCourseAndReviewsDemo {
+public class DeleteCourseAndReviewsDemo {
 
 	public static void main(String[] args) {
 		
@@ -33,20 +33,12 @@ public class GetCourseAndReviewsDemo {
 			session.beginTransaction();
 			
 			
-			//get the cpurse
+			//delete the course
 			int theId=10;
 			
 			Course tempCourse=session.get(Course.class,theId);
 			
-			
-			
-			//print the course
-			System.out.println("Course is: "+ tempCourse);
-			
-			
-			
-			//print course reviews
-			System.out.println("Reviews: "+ tempCourse.getReviews());
+			session.delete(tempCourse);
 			
 			
 			
